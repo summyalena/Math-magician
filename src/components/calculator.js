@@ -25,15 +25,14 @@ class Calculator extends React.Component {
             {this.state.total}
             {this.state.next}
             {this.state.operation}
-
           </span>
         </header>
         <div className="wrap">
           <div className="body">
             <div className="string">
               <button onClick={this.handleEvent} type="button">AC</button>
-              <button onClick={this.HandleEvent} type="button">+/-</button>
-              <button onClick={this.HandleEvent} type="button">%</button>
+              <button onClick={this.handleEvent} type="button">+/-</button>
+              <button onClick={this.handleEvent} type="button">%</button>
             </div>
             <div className="numbers">
               <button onClick={this.handleEvent} type="button">7</button>
