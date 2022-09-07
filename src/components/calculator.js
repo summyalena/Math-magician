@@ -1,69 +1,62 @@
-import React from 'react';
+/* eslint-disable react/destructuring-assignment */
 
+import React from 'react';
+import calculate from '../logic/calculate';
 import './calculator.css';
 
-const numbers = () => {
-  const array = [];
-  for (let i = 9; i >= 7; i -= 1) {
-    array.push(
-      <button type="button" id={i}>{i}</button>,
-    );
-  }
-  return array;
-};
-
-const number2 = () => {
-  const array = [];
-  for (let i = 6; i >= 4; i -= 1) {
-    array.push(
-      <button type="button" id={i}>{i}</button>,
-    );
-  }
-  return array;
-};
-
-const number3 = () => {
-  const array = [];
-  for (let i = 1; i <= 3; i += 1) {
-    array.push(
-      <button type="button" id={i}>{i}</button>,
-    );
-  }
-  return array;
-};
-
-// };
 // eslint-disable-next-line react/prefer-stateless-function
 class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { total: null, next: null, operation: null };
+    this.handleEvent = this.handleEvent.bind(this);
+  }
+
+  handleEvent(e) {
+    // eslint-disable-next-line react/no-access-state-in-setstate
+    this.setState(calculate(this.state, e.target.textContent));
+  }
+
   render() {
     return (
       <div className="calculator">
         <header className="head">
-          <span>0</span>
+          <span>
+            {this.state.total}
+            {this.state.next}
+            {this.state.operation}
+
+          </span>
         </header>
         <div className="wrap">
           <div className="body">
             <div className="string">
-              <button type="button">AC</button>
-              <button type="button">+/-</button>
-              <button type="button">%</button>
+              <button onClick={this.handleEvent} type="button">AC</button>
+              <button onClick={this.HandleEvent} type="button">+/-</button>
+              <button onClick={this.HandleEvent} type="button">%</button>
             </div>
             <div className="numbers">
-              {numbers()}
-              {number2()}
-              {number3()}
+              <button onClick={this.handleEvent} type="button">7</button>
+              <button onClick={this.handleEvent} type="button">8</button>
+              <button onClick={this.handleEvent} type="button">9</button>
+              <button onClick={this.handleEvent} type="button">4</button>
+              <button onClick={this.handleEvent} type="button">5</button>
+              <button onClick={this.handleEvent} type="button">6</button>
+              <button onClick={this.handleEvent} type="button">1</button>
+              <button onClick={this.handleEvent} type="button">2</button>
+              <button onClick={this.handleEvent} type="button">3</button>
             </div>
             <div className="last-digits">
-              <button type="button">0</button>
-              <button type="button">.</button>
+              <button onClick={this.handleEvent} type="button">0</button>
+              <button onClick={this.HandleEvent} type="button">.</button>
             </div>
           </div>
           <div className="operators">
-            <button type="button">&#xf7;</button>
-            <button type="button">*</button>
-            <button type="button">-</button>
-            <button type="button">+</button>
-            <button type="button">=</button>
+            <button onClick={this.handleEvent} type="button">&#xf7;</button>
+            <button onClick={this.handleEvent} type="button">*</button>
+            <button onClick={this.handleEvent} type="button">-</button>
+            <button onClick={this.handleEvent} type="button">+</button>
+            <button onClick={this.handleEvent} type="button">=</button>
           </div>
         </div>
       </div>
