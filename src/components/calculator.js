@@ -59,7 +59,7 @@ class Calculator extends React.Component {
             </div>
           </div>
           <div className="operators">
-            <button type="button">+</button>
+            <button type="button">&#xf7;</button>
             <button type="button">*</button>
             <button type="button">-</button>
             <button type="button">+</button>
