@@ -1,0 +1,29 @@
+.home-container {
+  color: white;
+  padding: 1.3em 1em;
+  width: 100%;
+}
+
+.home-container h3 {
+  font-size: 2.3em;
+  font-weight: 800;
+}
+
+.home-container p {
+  font-size: 1.2em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+@media (max-width: 900px) {
+  .home-container {
+    padding: 1.3em 2em;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+  }
+
+  .home-container p {
+    width: 300px;
+    display: inline;
+  }
+}

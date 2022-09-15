@@ -1,0 +1,21 @@
+.quote {
+  display: flex;
+  margin-top: 3em;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.quote p {
+  font-size: 1.2em;
+}
+
+@media (max-width: 900px) {
+  .quote {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 1.5em;
+  }
+}

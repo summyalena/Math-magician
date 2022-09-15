@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import calculate from '../logic/calculate';
 import './calculator.css'
+import Headers from './Headers';
 
 const calculator = () => {
   const [obj, setObj] = useState({total:null, next:null, operation:null});
@@ -10,7 +11,12 @@ const calculator = () => {
     setObj(calculate(obj, e.target.textContent))
   }
     return (
-
+   <>
+  <Headers />
+        <div className="overall">
+          <div className='text'>
+            <h2>Let's do some maths</h2>
+          </div>
         <div className="calculator">
         <header className="head">
           <span> {obj.total} 
@@ -50,7 +56,8 @@ const calculator = () => {
           </div>
         </div>
       </div>
-       
+       </div>
+       </>
     )
 }
 

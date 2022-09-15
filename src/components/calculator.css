@@ -1,6 +1,21 @@
+.overall {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+}
+
+.text {
+  color: white;
+  border-bottom: 1px solid red;
+  font-size: 1.5em;
+}
+
 .calculator {
-  border: 0.1em solid rgba(219, 217, 217, 0.37);
+  border: 0.1em solid rgba(243, 11, 11, 0.37);
   border-radius: 0.4em;
+  margin-top: 3em;
+  padding: 1em 0.5em;
 }
 
 * {
@@ -10,8 +25,8 @@
 .head {
   padding: 0.68em 1em;
   display: flex;
-  background-color: gray;
-  border: 0.02em solid rgba(255, 255, 255, 0.479);
+  background-color: rgba(255, 0, 0, 0.767);
+  border: 0.02em solid rgba(255, 255, 255, 0.925);
   flex-direction: row-reverse;
 }
 
@@ -32,8 +47,8 @@
 
 .operators button {
   padding: 0.68em 1.6em;
-  background-color: rgb(255, 123, 0);
-  border: 0.02em solid rgba(255, 255, 255, 0.479);
+  background-color: rgba(255, 0, 0, 0.767);
+  border: 0.02em solid rgba(255, 255, 255, 0.904);
 }
 
 .string {
@@ -43,7 +58,7 @@
 
 .string button {
   padding: 0.68em 1.6em;
-  border: 0.02em solid rgba(255, 255, 255, 0.479);
+  border: 0.02em solid rgba(255, 255, 255, 0.932);
 }
 
 .body {
@@ -81,4 +96,14 @@
 
 .last-digits > * {
   flex: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .overall {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+  }
 }
